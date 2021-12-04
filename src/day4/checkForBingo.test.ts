@@ -32,28 +32,37 @@ const verticalBingo = [
 ];
 
 describe("checkForBingo", () => {
-  it("returns null if there is no Bingo", () => {
-    expect(checkForBingo(unmarkedBoards)).toEqual(null);
-    expect(checkForBingo(firstMarkBoards)).toEqual(null);
-    expect(checkForBingo(secondMarkBoards)).toEqual(null);
-    expect(checkForBingo(penultimateMarkBoards)).toEqual(null);
+  it("returns false if there is no Bingo", () => {
+    expect(checkForBingo(unmarkedBoards[0])).toEqual(false);
+    expect(checkForBingo(unmarkedBoards[1])).toEqual(false);
+    expect(checkForBingo(unmarkedBoards[2])).toEqual(false);
+    expect(checkForBingo(firstMarkBoards[0])).toEqual(false);
+    expect(checkForBingo(firstMarkBoards[1])).toEqual(false);
+    expect(checkForBingo(firstMarkBoards[2])).toEqual(false);
+    expect(checkForBingo(secondMarkBoards[0])).toEqual(false);
+    expect(checkForBingo(secondMarkBoards[1])).toEqual(false);
+    expect(checkForBingo(secondMarkBoards[2])).toEqual(false);
   });
-  it("returns the winning board if there is a horizontal Bingo", () => {
-    expect(checkForBingo(finalMarkBoards)).toEqual([
-      [null, null, null, null, null],
-      [10, 16, 15, null, 19],
-      [18, 8, null, 26, 20],
-      [22, null, 13, 6, null],
-      [null, null, 12, 3, null],
-    ]);
+  it("returns true there is a horizontal Bingo", () => {
+    expect(
+      checkForBingo([
+        [null, null, null, null, null],
+        [10, 16, 15, null, 19],
+        [18, 8, null, 26, 20],
+        [22, null, 13, 6, null],
+        [null, null, 12, 3, null],
+      ])
+    ).toBe(true);
   });
-  it("returns the winning board if there is a vertical Bingo", () => {
-    expect(checkForBingo(verticalBingo)).toEqual([
-      [22, 13, 17, 11, null],
-      [8, 2, 23, 4, null],
-      [21, 9, 14, 16, null],
-      [6, 10, 3, 18, null],
-      [1, 12, 20, 15, null],
-    ]);
+  it("returns true if there is a vertical Bingo", () => {
+    expect(
+      checkForBingo([
+        [22, 13, 17, 11, null],
+        [8, 2, 23, 4, null],
+        [21, 9, 14, 16, null],
+        [6, 10, 3, 18, null],
+        [1, 12, 20, 15, null],
+      ])
+    ).toBe(true);
   });
 });

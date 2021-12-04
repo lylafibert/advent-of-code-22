@@ -9,11 +9,18 @@ export const playBingo = (
   let drawNumber;
   let currentBoardsState = boards;
 
-  for (let i = 0; i < drawNumbers.length && !winningBoard; i++) {
-    drawNumber = drawNumbers[i];
+  for (
+    let drawIndex = 0;
+    drawIndex < drawNumbers.length && !winningBoard;
+    drawIndex++
+  ) {
+    drawNumber = drawNumbers[drawIndex];
     const markedBoards = markBoards(currentBoardsState, drawNumber);
     currentBoardsState = markedBoards;
-    winningBoard = checkForBingo(currentBoardsState);
+    for (let i = 0; i < currentBoardsState.length && !winningBoard; i++) {
+      const currentBoard = currentBoardsState[i];
+      if (checkForBingo(currentBoard)) winningBoard = currentBoard;
+    }
   }
   const flattenedWinningBoard = winningBoard.flat();
   const winningBoardSum = flattenedWinningBoard.reduce(

@@ -1,21 +1,18 @@
-export const checkForBingo = (boards: number[][][]): null | number[][] => {
+export const checkForBingo = (board: number[][]): boolean => {
   let hasBingo = false;
-  let winningBoard = null;
-  for (let i = 0; i < boards.length && !hasBingo; i++) {
-    const currentBoard = boards[i];
-    for (let i = 0; i < currentBoard.length && !hasBingo; i++) {
-      hasBingo = currentBoard.every((row) => row[i] === null);
-      if (!hasBingo) {
-        const currentRow = currentBoard[i];
 
-        const rowSet = new Set(currentRow);
-        if (rowSet.size === 1) {
-          const [setContent] = rowSet;
-          if (setContent === null) hasBingo = true;
-        }
+  for (let i = 0; i < board.length && !hasBingo; i++) {
+    hasBingo = board.every((row) => row[i] === null);
+    if (!hasBingo) {
+      const currentRow = board[i];
+
+      const rowSet = new Set(currentRow);
+      if (rowSet.size === 1) {
+        const [setContent] = rowSet;
+        if (setContent === null) hasBingo = true;
       }
     }
-    if (hasBingo) winningBoard = currentBoard;
   }
-  return winningBoard;
+
+  return hasBingo;
 };
