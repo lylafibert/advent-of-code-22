@@ -1,0 +1,7 @@
+import { function } from "./function";
+
+describe("function", () => {
+  it("returns something", () => {
+    expect(function("something")).toBe("something");
+  });
+});
