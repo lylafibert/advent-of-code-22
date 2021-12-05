@@ -1,16 +1,19 @@
 import { getLineCoordinates } from "./getLineCoordinates";
 import { parseInput } from "./parseInput";
 
-export const getOverlappingPoints = (unparsedVentLines: string[]): number => {
+export const getOverlappingPoints = (
+  unparsedVentLines: string[],
+  includeDiagonals: boolean
+): number => {
   const ventLines = parseInput(unparsedVentLines);
 
   const lineCoordinates: number[][] = [];
 
   ventLines.forEach((ventLine) => {
-    if (
-      ventLine.start.x === ventLine.end.x ||
-      ventLine.start.y === ventLine.end.y
-    ) {
+    const isDiagonal =
+      ventLine.start.x !== ventLine.end.x &&
+      ventLine.start.y !== ventLine.end.y;
+    if (!isDiagonal || includeDiagonals) {
       lineCoordinates.push(...getLineCoordinates(ventLine));
     }
   });

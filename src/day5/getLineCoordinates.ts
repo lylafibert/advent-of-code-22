@@ -6,23 +6,25 @@ interface VentLine {
 export const getLineCoordinates = ({ start, end }: VentLine): number[][] => {
   const lineCoordinates = [[start.x, start.y]];
 
-  if (start.x === end.x) {
-    const { direction, length } = getDirectionAndLength(start.y, end.y);
+  const { direction: xDirection, length: xLength } = getDirectionAndLength(
+    start.x,
+    end.x
+  );
+  const { direction: yDirection, length: yLength } = getDirectionAndLength(
+    start.y,
+    end.y
+  );
 
-    let y = start.y;
-    for (let i = 0; i < length; i++) {
-      y += direction;
-      lineCoordinates.push([start.x, y]);
-    }
-  } else {
-    const { direction, length } = getDirectionAndLength(start.x, end.x);
+  const length = xLength || yLength;
+  let y = start.y;
+  let x = start.x;
 
-    let x = start.x;
-    for (let i = 0; i < length; i++) {
-      x += direction;
-      lineCoordinates.push([x, start.y]);
-    }
+  for (let i = 0; i < length; i++) {
+    y += yDirection;
+    x += xDirection;
+    lineCoordinates.push([x, y]);
   }
+
   return lineCoordinates;
 };
 

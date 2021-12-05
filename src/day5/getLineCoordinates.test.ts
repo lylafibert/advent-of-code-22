@@ -48,4 +48,21 @@ describe("getLineCoordinates", () => {
       [7, 4],
     ]);
   });
+
+  it("returns all the coordinates that a diagonal vent line passes through", () => {
+    expect(
+      getLineCoordinates({ start: { x: 1, y: 1 }, end: { x: 3, y: 3 } })
+    ).toEqual([
+      [1, 1],
+      [2, 2],
+      [3, 3],
+    ]);
+    expect(
+      getLineCoordinates({ start: { x: 9, y: 7 }, end: { x: 7, y: 9 } })
+    ).toEqual([
+      [9, 7],
+      [8, 8],
+      [7, 9],
+    ]);
+  });
 });

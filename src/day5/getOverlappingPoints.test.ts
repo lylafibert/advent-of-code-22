@@ -15,8 +15,12 @@ const ventLines = [
 ];
 
 describe("getOverlappingPoints", () => {
-  it("returns the number of coordinates with at least two overlapping lines", () => {
-    expect(getOverlappingPoints(ventLines)).toBe(5);
-    expect(getOverlappingPoints(puzzleInput)).toBe(5576);
+  it("returns the number of coordinates with at least two overlapping lines without including diagonals", () => {
+    expect(getOverlappingPoints(ventLines, false)).toBe(5);
+    expect(getOverlappingPoints(puzzleInput, false)).toBe(5576);
+  });
+  it("returns the number of coordinates with at least two overlapping lines including diagonals", () => {
+    expect(getOverlappingPoints(ventLines, true)).toBe(12);
+    expect(getOverlappingPoints(puzzleInput, true)).toBe(18144);
   });
 });
