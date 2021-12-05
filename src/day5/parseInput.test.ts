@@ -14,16 +14,16 @@ const ventLines = [
 ];
 
 const parsedVentLines = [
-  { from: { x: 854, y: 958 }, to: { x: 957, y: 958 } },
-  { from: { x: 8, y: 0 }, to: { x: 0, y: 8 } },
-  { from: { x: 9, y: 4 }, to: { x: 3, y: 4 } },
-  { from: { x: 2, y: 2 }, to: { x: 2, y: 1 } },
-  { from: { x: 7, y: 0 }, to: { x: 7, y: 4 } },
-  { from: { x: 6, y: 4 }, to: { x: 2, y: 0 } },
-  { from: { x: 0, y: 9 }, to: { x: 2, y: 9 } },
-  { from: { x: 3, y: 4 }, to: { x: 1, y: 4 } },
-  { from: { x: 0, y: 0 }, to: { x: 8, y: 8 } },
-  { from: { x: 5, y: 5 }, to: { x: 8, y: 2 } },
+  { start: { x: 854, y: 958 }, end: { x: 957, y: 958 } },
+  { start: { x: 8, y: 0 }, end: { x: 0, y: 8 } },
+  { start: { x: 9, y: 4 }, end: { x: 3, y: 4 } },
+  { start: { x: 2, y: 2 }, end: { x: 2, y: 1 } },
+  { start: { x: 7, y: 0 }, end: { x: 7, y: 4 } },
+  { start: { x: 6, y: 4 }, end: { x: 2, y: 0 } },
+  { start: { x: 0, y: 9 }, end: { x: 2, y: 9 } },
+  { start: { x: 3, y: 4 }, end: { x: 1, y: 4 } },
+  { start: { x: 0, y: 0 }, end: { x: 8, y: 8 } },
+  { start: { x: 5, y: 5 }, end: { x: 8, y: 2 } },
 ];
 describe("parseInput", () => {
   it("returns the number of times a depth measurement increases", () => {

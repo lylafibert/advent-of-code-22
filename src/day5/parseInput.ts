@@ -1,17 +1,18 @@
 interface VentLine {
-  from: { x: number; y: number };
-  to: { x: number; y: number };
+  start: { x: number; y: number };
+  end: { x: number; y: number };
 }
 
 export const parseInput = (unparsedVentLines: string[]): VentLine[] => {
   return unparsedVentLines.map((unparsedVentLine) => {
-    const [fromXString, middleString, toYString] = unparsedVentLine.split(",");
+    const [startXString, middleString, endYString] =
+      unparsedVentLine.split(",");
 
-    const [fromYString, toXString] = middleString.split(" -> ");
+    const [startYString, endXString] = middleString.split(" -> ");
 
     return {
-      from: { x: parseInt(fromXString), y: parseInt(fromYString) },
-      to: { x: parseInt(toXString), y: parseInt(toYString) },
+      start: { x: parseInt(startXString), y: parseInt(startYString) },
+      end: { x: parseInt(endXString), y: parseInt(endYString) },
     };
   });
 };
