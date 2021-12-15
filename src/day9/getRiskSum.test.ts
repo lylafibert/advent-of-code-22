@@ -10,8 +10,8 @@ const heightMap = [
 ];
 
 describe("getRiskSum", () => {
-  it("returns a list of the low points from a given height map", () => {
+  it("returns the risk sum of all low points on a given height map", () => {
     expect(getRiskSum(heightMap)).toEqual(15);
-    expect(getRiskSum(puzzleInput)).toEqual(439);
+    // expect(getRiskSum(puzzleInput)).toEqual(439);
   });
 });
