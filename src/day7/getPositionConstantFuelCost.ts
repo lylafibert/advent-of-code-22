@@ -3,7 +3,7 @@ interface Props {
   finalPosition: number;
 }
 
-export const getPositionFuelCost = ({
+export const getPositionConstantFuelCost = ({
   crabPositions,
   finalPosition,
 }: Props): number => {
