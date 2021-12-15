@@ -1,9 +1,5 @@
-export const getLowPoints = (heightMapStrings: string[]): number => {
+export const getLowPoints = (heightMap: number[][]): number[] => {
   const lowPoints: number[] = [];
-
-  const heightMap = heightMapStrings.map((row) => {
-    return row.split("").map((digitString) => Number(digitString));
-  });
 
   heightMap.forEach((row, rowIndex) => {
     row.forEach((height, columnIndex) => {
@@ -24,7 +20,5 @@ export const getLowPoints = (heightMapStrings: string[]): number => {
       }
     });
   });
-  return lowPoints.reduce((riskSum, lowPoint) => {
-    return riskSum + lowPoint + 1;
-  }, 0);
+  return lowPoints;
 };
