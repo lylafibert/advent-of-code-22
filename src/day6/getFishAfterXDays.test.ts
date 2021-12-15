@@ -1,6 +1,5 @@
 import { puzzleInput } from "./puzzleInput";
 import { getFishAfterXDays } from "./getFishAfterXDays";
-import fs from "fs";
 
 const day0 = [3, 4, 3, 1, 2];
 
