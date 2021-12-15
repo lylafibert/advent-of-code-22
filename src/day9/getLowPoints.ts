@@ -1,5 +1,11 @@
-export const getLowPoints = (heightMap: number[][]): number[] => {
-  const lowPoints: number[] = [];
+interface LowPoint {
+  height: number;
+  rowIndex: number;
+  columnIndex: number;
+}
+
+export const getLowPoints = (heightMap: number[][]): LowPoint[] => {
+  const lowPoints: LowPoint[] = [];
 
   heightMap.forEach((row, rowIndex) => {
     row.forEach((height, columnIndex) => {
@@ -16,7 +22,7 @@ export const getLowPoints = (heightMap: number[][]): number[] => {
       if (
         adjacentLocations.every((locationHeight) => locationHeight > height)
       ) {
-        lowPoints.push(height);
+        lowPoints.push({ height, rowIndex, columnIndex });
       }
     });
   });

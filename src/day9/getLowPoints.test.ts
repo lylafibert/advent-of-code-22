@@ -1,5 +1,4 @@
 import { getLowPoints } from "./getLowPoints";
-import { puzzleInput } from "./puzzleInput";
 
 const heightMap = [
   [2, 1, 9, 9, 9, 4, 3, 2, 1, 0],
@@ -11,6 +10,11 @@ const heightMap = [
 
 describe("getLowPoints", () => {
   it("returns a list of the low points from a given height map", () => {
-    expect(getLowPoints(heightMap)).toEqual([1, 0, 5, 5]);
+    expect(getLowPoints(heightMap)).toEqual([
+      { height: 1, rowIndex: 0, columnIndex: 1 },
+      { height: 0, rowIndex: 0, columnIndex: 9 },
+      { height: 5, rowIndex: 2, columnIndex: 2 },
+      { height: 5, rowIndex: 4, columnIndex: 6 },
+    ]);
   });
 });

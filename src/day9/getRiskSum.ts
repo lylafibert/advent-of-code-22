@@ -6,7 +6,7 @@ export const getRiskSum = (heightMapStrings: string[]): number => {
   });
 
   const lowPoints = getLowPoints(heightMap);
-  return lowPoints.reduce((riskSum, lowPoint) => {
-    return riskSum + lowPoint + 1;
+  return lowPoints.reduce((riskSum, { height }) => {
+    return riskSum + height + 1;
   }, 0);
 };
