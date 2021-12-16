@@ -1,4 +1,4 @@
-import { getLowPoints } from "./getLowPoints";
+import { getLowPoints } from "../getLowPoints";
 
 export const getRiskSum = (heightMapStrings: string[]): number => {
   const heightMap = heightMapStrings.map((row) => {

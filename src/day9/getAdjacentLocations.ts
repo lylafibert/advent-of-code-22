@@ -3,7 +3,7 @@ import { Location } from "./types";
 export const getAdjacentLocations = (
   heightMap: number[][],
   { rowIndex, columnIndex }: Location
-): number[] => {
+): Location[] => {
   const northRow = heightMap[rowIndex - 1];
   const southRow = heightMap[rowIndex + 1];
 
@@ -17,5 +17,10 @@ export const getAdjacentLocations = (
     ? 9
     : heightMap[rowIndex][columnIndex - 1];
 
-  return [north, south, east, west];
+  return [
+    { height: north, rowIndex: rowIndex - 1, columnIndex },
+    { height: east, rowIndex, columnIndex: columnIndex + 1 },
+    { height: south, rowIndex: rowIndex + 1, columnIndex },
+    { height: west, rowIndex, columnIndex: columnIndex - 1 },
+  ];
 };

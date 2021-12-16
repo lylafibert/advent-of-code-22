@@ -12,7 +12,9 @@ export const getLowPoints = (heightMap: number[][]): Location[] => {
         height,
       });
       if (
-        adjacentLocations.every((locationHeight) => locationHeight > height)
+        adjacentLocations.every(
+          ({ height: locationHeight }) => locationHeight > height
+        )
       ) {
         lowPoints.push({ height, rowIndex, columnIndex });
       }

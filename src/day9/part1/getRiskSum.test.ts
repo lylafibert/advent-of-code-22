@@ -1,5 +1,5 @@
 import { getRiskSum } from "./getRiskSum";
-import { puzzleInput } from "./puzzleInput";
+import { puzzleInput } from "../puzzleInput";
 
 const heightMap = [
   "2199943210",
@@ -12,6 +12,6 @@ const heightMap = [
 describe("getRiskSum", () => {
   it("returns the risk sum of all low points on a given height map", () => {
     expect(getRiskSum(heightMap)).toEqual(15);
-    // expect(getRiskSum(puzzleInput)).toEqual(439);
+    expect(getRiskSum(puzzleInput)).toEqual(439);
   });
 });
