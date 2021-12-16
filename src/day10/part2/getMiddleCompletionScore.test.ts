@@ -1,5 +1,5 @@
 import { getMiddleCompletionScore } from "./getMiddleCompletionScore";
-import { puzzleInput } from "./puzzleInput";
+import { puzzleInput } from "../puzzleInput";
 
 const subsystem = [
   "[({(<(())[]>[[{[]{<()<>>",

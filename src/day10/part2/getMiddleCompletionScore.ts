@@ -1,4 +1,4 @@
-import { sortNumbersDescending } from "../helpers";
+import { sortNumbersDescending } from "../../helpers";
 import { completeLine } from "./completeLine";
 import { getCompletionScore } from "./getCompletionScore";
 import { isIncompleteLine } from "./isIncompleteLine";

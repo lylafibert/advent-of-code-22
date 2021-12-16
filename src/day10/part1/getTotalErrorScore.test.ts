@@ -1,5 +1,5 @@
 import { getTotalErrorScore } from "./getTotalErrorScore";
-import { puzzleInput } from "./puzzleInput";
+import { puzzleInput } from "../puzzleInput";
 
 const subsystem = [
   "[({(<(())[]>[[{[]{<()<>>",
