@@ -5,9 +5,12 @@ export const foldPaper = (
   dots: number[][],
   foldAxis: Axis,
   foldCoordinate: number
-): number => {
+): number[][] => {
   const axisIndex = foldAxis === Axis.X ? 0 : 1;
-  const { firstHalf, foldingHalf } = dots.reduce(
+  const {
+    firstHalf,
+    foldingHalf,
+  }: { firstHalf: number[][]; foldingHalf: number[][] } = dots.reduce(
     ({ firstHalf, foldingHalf }, currentDot) => {
       if (currentDot[axisIndex] < foldCoordinate) {
         return { firstHalf: [...firstHalf, currentDot], foldingHalf };
@@ -25,5 +28,5 @@ export const foldPaper = (
     );
     if (!dotExistsAlready) firstHalf.push(newDot);
   });
-  return firstHalf.length;
+  return firstHalf;
 };

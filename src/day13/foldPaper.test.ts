@@ -1,8 +1,8 @@
 import { foldPaper } from "./foldPaper";
-import puzzleInput from "./puzzleInput";
+import { dots } from "./puzzleInput";
 import { Axis } from "./types";
 
-const dots = [
+const testDots = [
   [6, 10],
   [0, 14],
   [9, 10],
@@ -24,8 +24,8 @@ const dots = [
 ];
 
 describe("foldPaper", () => {
-  it("returns the number of visible dots after folding the paper along a given line", () => {
-    expect(foldPaper(dots, Axis.Y, 7)).toBe(17);
-    expect(foldPaper(puzzleInput, Axis.X, 655)).toBe(655);
+  it("returns the dots after folding the paper along a given line", () => {
+    expect(foldPaper(testDots, Axis.Y, 7).length).toBe(17);
+    expect(foldPaper(dots, Axis.X, 655).length).toBe(655);
   });
 });

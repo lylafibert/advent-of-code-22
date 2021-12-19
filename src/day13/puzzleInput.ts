@@ -1,4 +1,6 @@
-export default [
+import { Axis } from "./types";
+
+export const dots = [
   [1094, 19],
   [751, 827],
   [323, 890],
@@ -793,4 +795,19 @@ export default [
   [1111, 402],
   [426, 546],
   [1295, 149],
+];
+
+export const foldingInstructions: [Axis, number][] = [
+  [Axis.X, 655],
+  [Axis.Y, 447],
+  [Axis.X, 327],
+  [Axis.Y, 223],
+  [Axis.X, 163],
+  [Axis.Y, 111],
+  [Axis.X, 81],
+  [Axis.Y, 55],
+  [Axis.X, 40],
+  [Axis.Y, 27],
+  [Axis.Y, 13],
+  [Axis.Y, 6],
 ];
