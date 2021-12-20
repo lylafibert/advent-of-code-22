@@ -6,5 +6,8 @@ describe("getPolymerNumber", () => {
   it("returns the quantity of the most common element minus the quantity of the least common element of a polymer after x steps", () => {
     expect(getPolymerNumber(step0, testRules, 10)).toBe(1588);
     expect(getPolymerNumber(polymerTemplate, rules, 10)).toBe(3048);
+
+    // not efficient enough
+    // expect(getPolymerNumber(step0, testRules, 40)).toBe(2188189693529);
   });
 });

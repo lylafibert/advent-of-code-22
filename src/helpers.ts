@@ -6,62 +6,53 @@ export interface Position {
 }
 
 interface PositionData {
-  position: Position;
+  position: number[];
   endRow: number;
   endColumn: number;
+  includeDiagonals: boolean;
 }
 
 export const getAdjacentPositions = ({
-  position: { row, column },
+  position: [row, column],
   endRow,
   endColumn,
-}: PositionData): Position[] => {
+  includeDiagonals = true,
+}: PositionData): number[][] => {
   const isFirstColumn = column === 0;
   const isLastColumn = column === endColumn;
   const isFirstRow = row === 0;
   const isLastRow = row === endRow;
 
-  const adjacentPositions: Position[] = [];
+  const adjacentPositions: number[][] = [];
 
   // east
-  if (!isLastColumn) adjacentPositions.push({ row, column: column + 1 });
+  if (!isLastColumn) adjacentPositions.push([row, column + 1]);
 
   // west
-  if (!isFirstColumn) adjacentPositions.push({ row, column: column - 1 });
+  if (!isFirstColumn) adjacentPositions.push([row, column - 1]);
 
   if (!isFirstRow) {
     // north
-    adjacentPositions.push({ row: row - 1, column });
-    // northEast
-    if (!isLastColumn)
-      adjacentPositions.push({
-        row: row - 1,
-        column: column + 1,
-      });
+    adjacentPositions.push([row - 1, column]);
+    if (includeDiagonals) {
+      // northEast
+      if (!isLastColumn) adjacentPositions.push([row - 1, column + 1]);
 
-    // northWest
-    if (!isFirstColumn)
-      adjacentPositions.push({
-        row: row - 1,
-        column: column - 1,
-      });
+      // northWest
+      if (!isFirstColumn) adjacentPositions.push([row - 1, column - 1]);
+    }
   }
 
   if (!isLastRow) {
     // south
-    adjacentPositions.push({ row: row + 1, column });
-    // southEast
-    if (!isLastColumn)
-      adjacentPositions.push({
-        row: row + 1,
-        column: column + 1,
-      });
-    // southWest
-    if (!isFirstColumn)
-      adjacentPositions.push({
-        row: row + 1,
-        column: column - 1,
-      });
+    adjacentPositions.push([row + 1, column]);
+
+    if (includeDiagonals) {
+      // southEast
+      if (!isLastColumn) adjacentPositions.push([row + 1, column + 1]);
+      // southWest
+      if (!isFirstColumn) adjacentPositions.push([row + 1, column - 1]);
+    }
   }
 
   return adjacentPositions;
