@@ -1,4 +1,4 @@
-import { puzzleInput } from "./puzzleInput";
+import { puzzleInput } from "../puzzleInput";
 import { getFishAfterXDays } from "./getFishAfterXDays";
 
 const day0 = [3, 4, 3, 1, 2];
@@ -11,7 +11,7 @@ describe("getFishAfterXDays", () => {
   });
 
   it.skip("returns the number of fish after 256 days", () => {
-    expect(getFishAfterXDays(testFishDay80, 176)).toBe(26984457539);
+    expect(getFishAfterXDays(day0, 256)).toBe(26984457539);
     // expect(getFishAfterXDays(puzzleInput, 256)).toBe(385391);
   });
 });
