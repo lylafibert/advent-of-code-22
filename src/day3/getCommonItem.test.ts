@@ -2,23 +2,22 @@ import { getCommonItem } from "./getCommonItem";
 
 describe("getCommonItem", () => {
   it("returns the item that is in both compartments", () => {
+    expect(getCommonItem(["vJrwpWtwJgWr", "hcsFMMfFFhFp"])).toBe("p");
+    expect(getCommonItem(["jqHRNqRjqzjGDLGL", "rsFMfFZSrLrFZsSL"])).toBe("L");
+    expect(getCommonItem(["PmmdzqPrV", "vPwwTWBwg"])).toBe("P");
     expect(
-      getCommonItem({
-        firstCompartment: "vJrwpWtwJgWr",
-        secondCompartment: "hcsFMMfFFhFp",
-      })
-    ).toBe("p");
+      getCommonItem([
+        "vJrwpWtwJgWrhcsFMMfFFhFp",
+        "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL",
+        "PmmdzqPrVvPwwTWBwg",
+      ])
+    ).toBe("r");
     expect(
-      getCommonItem({
-        firstCompartment: "jqHRNqRjqzjGDLGL",
-        secondCompartment: "rsFMfFZSrLrFZsSL",
-      })
-    ).toBe("L");
-    expect(
-      getCommonItem({
-        firstCompartment: "PmmdzqPrV",
-        secondCompartment: "vPwwTWBwg",
-      })
-    ).toBe("P");
+      getCommonItem([
+        "wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn",
+        "ttgJtRGJQctTZtZT",
+        "CrZsJsPPZsGzwwsLwLmpwMDw",
+      ])
+    ).toBe("Z");
   });
 });

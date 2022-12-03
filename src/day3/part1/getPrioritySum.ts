@@ -1,5 +1,5 @@
-import { getCommonItem } from "./getCommonItem";
-import { getItemPriority } from "./getItemPriority";
+import { getCommonItem } from "../getCommonItem";
+import { getItemPriority } from "../getItemPriority";
 
 export const getPrioritySum = (rucksacks: string[]): number => {
   return rucksacks.reduce((prioritySum, rucksack) => {
@@ -10,7 +10,7 @@ export const getPrioritySum = (rucksacks: string[]): number => {
       rucksack.length
     );
 
-    const commonItem = getCommonItem({ firstCompartment, secondCompartment });
+    const commonItem = getCommonItem([firstCompartment, secondCompartment]);
     const itemPriority = getItemPriority(commonItem);
 
     return prioritySum + itemPriority;

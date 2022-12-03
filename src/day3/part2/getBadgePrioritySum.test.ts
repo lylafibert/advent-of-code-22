@@ -1,5 +1,5 @@
-import { getPrioritySum } from "./getPrioritySum";
-import { puzzleInput } from "./puzzleInput";
+import { getBadgePrioritySum } from "./getBadgePrioritySum";
+import { puzzleInput } from "../puzzleInput";
 
 const testInput = [
   "vJrwpWtwJgWrhcsFMMfFFhFp",
@@ -10,11 +10,11 @@ const testInput = [
   "CrZsJsPPZsGzwwsLwLmpwMDw",
 ];
 
-describe("getPrioritySum", () => {
+describe("getBadgePrioritySum", () => {
   it("returns the sum of priorities for item types that appear in both compartments of the rucksacks", () => {
-    expect(getPrioritySum(testInput)).toBe(157);
+    expect(getBadgePrioritySum(testInput)).toBe(70);
   });
   it("gets the puzzle answer", () => {
-    expect(getPrioritySum(puzzleInput)).toBe(7597);
+    expect(getBadgePrioritySum(puzzleInput)).toBe(2607);
   });
 });

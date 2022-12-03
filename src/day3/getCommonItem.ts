@@ -1,11 +1,6 @@
-export const getCommonItem = ({
-  firstCompartment,
-  secondCompartment,
-}: {
-  firstCompartment: string;
-  secondCompartment: string;
-}): string => {
-  return firstCompartment
+export const getCommonItem = (rucksacks: string[]): string => {
+  const firstRucksack = rucksacks.shift();
+  return firstRucksack
     .split("")
-    .find((item) => secondCompartment.includes(item));
+    .find((item) => rucksacks.every((rucksack) => rucksack.includes(item)));
 };
