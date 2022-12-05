@@ -7,10 +7,13 @@ export const moveCrates = (
   const { move, from, to } = instruction;
   const newCrates = { ...crates };
 
+  const cratesToMove = [];
+
   for (let i = 0; i < move; i++) {
     const crate = newCrates[from].pop();
-    newCrates[to].push(crate);
+    cratesToMove.unshift(crate);
   }
+  newCrates[to].push(...cratesToMove);
 
   return newCrates;
 };

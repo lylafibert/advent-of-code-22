@@ -17,10 +17,10 @@ const instructions = [
 
 describe("getTopCrates", () => {
   it("returns the top crates after the rearrangement procedure has been executed", () => {
-    expect(getTopCrates(initialCrates, instructions)).toEqual("CMZ");
+    expect(getTopCrates(initialCrates, instructions)).toEqual("MCD");
   });
 
   it("gets the puzzleAnswer", () => {
-    expect(getTopCrates(crates, rearrangementProcedure)).toEqual("GRTSWNJHH");
+    expect(getTopCrates(crates, rearrangementProcedure)).toEqual("QLFQDBBHM");
   });
 });

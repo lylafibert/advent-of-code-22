@@ -1,4 +1,4 @@
-import { moveCrates } from "./moveCrates";
+import { moveCrates } from "../part2/moveCrates";
 import { Crates, RearrangementProcedure } from "../types";
 
 export const getTopCrates = (

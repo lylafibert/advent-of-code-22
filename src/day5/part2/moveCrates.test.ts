@@ -16,19 +16,19 @@ const stepOneCrates = {
 const stepTwoCrates: Crates = {
   1: [],
   2: ["M", "C"],
-  3: ["P", "D", "N", "Z"],
+  3: ["P", "Z", "N", "D"],
 };
 
 const stepThreeCrates: Crates = {
-  1: ["C", "M"],
+  1: ["M", "C"],
   2: [],
-  3: ["P", "D", "N", "Z"],
+  3: ["P", "Z", "N", "D"],
 };
 
 const stepFourCrates: Crates = {
-  1: ["C"],
-  2: ["M"],
-  3: ["P", "D", "N", "Z"],
+  1: ["M"],
+  2: ["C"],
+  3: ["P", "Z", "N", "D"],
 };
 
 describe("moveCrates", () => {
